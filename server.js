@@ -5,9 +5,7 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 const {v4:uuidv4} = require("uuid")
 const io = require("socket.io")(server, {
-  cors: {
-    origin: '*'
-  }
+  cors: {origin: '*'}
 });
 const {ExpressPeerServer} = require("peer");
 const peerServer = ExpressPeerServer(server,{
@@ -17,7 +15,6 @@ const peerServer = ExpressPeerServer(server,{
 app.use("/peerjs",peerServer);
 
 app.get('/',(req,res) => {
-  // res.send("Hello World")
   res.redirect(`/${uuidv4()}`);
 })
 

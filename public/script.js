@@ -6,7 +6,8 @@ myVideo.muted = true;
 const user = prompt("Enter your name");
 
 var peer = new Peer({
-  host: '127.0.0.1',
+  // host: '127.0.0.1',
+  host:'/',
   port: 3030,
   path: '/peerjs',
 });
@@ -107,5 +108,5 @@ disconnectBtn.addEventListener("click",() => {
     myVideoElement.remove();
   }
   socket.emit("disconnect");
-  window.location.href = "https://www.google.com";
+  window.location.href = "https://google.com";
 })
